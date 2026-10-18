@@ -1,0 +1,346 @@
+{
+  "data": {
+    "raw_rows": 524950,
+    "clean_rows": 524926,
+    "weeks": 156,
+    "stores": 77,
+    "products": 55,
+    "first_week": "2009-01-14",
+    "last_week": "2012-01-04",
+    "share_rows_discounted": 0.25665141372307715,
+    "share_rows_any_promo": 0.28458296979002756
+  },
+  "features": {
+    "grid_rows": 575169,
+    "share_grid_weeks_observed": 0.9126465438853624,
+    "n_features": 43
+  },
+  "elasticity": {
+    "n_eligible": 55,
+    "median_by_spec": {
+      "M1 naive": -2.06990315531168,
+      "M2 + promo controls": -1.5102348913259611,
+      "M3 + store FE + seasonality": -1.6033640059047258,
+      "M4 + store FE + week FE": -0.941905642272899,
+      "M5 regular-price elasticity": -1.1293858368536762,
+      "M5 temporary-discount elasticity": -0.9309048471142427,
+      "M6 TPR-only (no ad/display weeks)": -0.8675588817047365,
+      "M7 promotion-calendar IV": -2.052956244404399,
+      "M8 promotion-identified (TPR events, store+week FE)": -0.8376719918812028
+    },
+    "share_negative_by_spec": {
+      "M1 naive": 0.9272727272727272,
+      "M2 + promo controls": 0.9090909090909091,
+      "M3 + store FE + seasonality": 1.0,
+      "M4 + store FE + week FE": 0.9454545454545454,
+      "M5 regular-price elasticity": 0.9090909090909091,
+      "M5 temporary-discount elasticity": 0.9272727272727272,
+      "M6 TPR-only (no ad/display weeks)": 0.9272727272727272,
+      "M7 promotion-calendar IV": 0.9454545454545454,
+      "M8 promotion-identified (TPR events, store+week FE)": 0.8909090909090909
+    },
+    "iv_first_stage_F_median": 1919.7833598716056,
+    "iv_weak_instruments": 3,
+    "m8_median_raw": -0.8376719918812028,
+    "decision_median_shrunk": -0.8083450821306648,
+    "n_usable": 51,
+    "n_not_usable": 4,
+    "segment_deviations_significant": 18,
+    "segment_deviations_total": 110,
+    "n_sign_flip_naive_positive_to_controlled_negative": 4
+  },
+  "backtest": {
+    "Dynamic engine | judged by its own (quarterly re-estimated) E  [main]": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9867139.585573338,
+      "revenue_change_pct": 0.01781769793608068,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 3094376.2371329083,
+      "profit_change_pct": 0.3424972478498236,
+      "units_change_pct": -0.08255027258651104
+    },
+    "Dynamic engine | E re-estimated on 2011 data": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9851838.875430752,
+      "revenue_change_pct": 0.0162393951828812,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 3097357.6356610097,
+      "profit_change_pct": 0.3437907296413034,
+      "units_change_pct": -0.07233033518577636
+    },
+    "Dynamic engine | E at less-elastic CI bound": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 10275933.693961605,
+      "revenue_change_pct": 0.059985732017398874,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 3217728.4267413253,
+      "profit_change_pct": 0.39601367971687607,
+      "units_change_pct": -0.05145519424295608
+    },
+    "Dynamic engine | E at more-elastic CI bound": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9426638.945169458,
+      "revenue_change_pct": -0.0276209364185781,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 2946972.101912727,
+      "profit_change_pct": 0.27854586292123096,
+      "units_change_pct": -0.12245069583034285
+    },
+    "Dynamic engine | judged by controlled OLS (M4) E": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9496603.19628708,
+      "revenue_change_pct": -0.020403966151482877,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 2984281.419398513,
+      "profit_change_pct": 0.29473253584185555,
+      "units_change_pct": -0.11310394630594023
+    },
+    "Static policy (one price change, no segments)": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9868205.241265267,
+      "revenue_change_pct": 0.017927622723679537,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 3111864.613182154,
+      "profit_change_pct": 0.3500845917654518,
+      "units_change_pct": -0.08534526843640111
+    },
+    "Rule of thumb: +5% on everything": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9700126.51910583,
+      "revenue_change_pct": 0.0005899235276043413,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 2660200.353021186,
+      "profit_change_pct": 0.15412974343710273,
+      "units_change_pct": -0.04657094153150332
+    },
+    "Naive-OLS policy | judged by engine E": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9843568.564480508,
+      "revenue_change_pct": 0.015386293959412045,
+      "profit_hist": 2304940.469776707,
+      "profit_sim": 2479615.356714084,
+      "profit_change_pct": 0.07578281922148689,
+      "units_change_pct": -0.008794890152876156
+    },
+    "Dynamic engine | assumed margin 20%": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9867139.585573338,
+      "revenue_change_pct": 0.01781769793608068,
+      "profit_hist": 1249302.3140305209,
+      "profit_sim": 2126838.615927132,
+      "profit_change_pct": 0.7024210969925191,
+      "units_change_pct": -0.08255027258651104
+    },
+    "Dynamic engine | assumed margin 40%": {
+      "revenue_hist": 9694407.56,
+      "revenue_sim": 9868756.150726901,
+      "revenue_change_pct": 0.01798445027690798,
+      "profit_hist": 3360578.6255228915,
+      "profit_sim": 4060869.2924232,
+      "profit_change_pct": 0.20838395554317568,
+      "units_change_pct": -0.08218288111786687
+    }
+  },
+  "backtest_policy": {
+    "median_multiplier": 1.0821751078928945,
+    "binding": {
+      "volume guardrail": 51,
+      "+price band": 3,
+      "none (interior optimum)": 1
+    }
+  },
+  "forecast": {
+    "cv_info": {
+      "n_estimators": {
+        "XGBoost": 268,
+        "LightGBM": 259
+      },
+      "bias_correction": {
+        "XGBoost": 1.0473047421080053,
+        "LightGBM": 1.0469640825430724
+      }
+    },
+    "test": {
+      "Naive (last week)": {
+        "MAE": 8.158280349453465,
+        "RMSE": 20.220114570563368,
+        "WMAPE": 0.4327570112854852,
+        "MAPE": 0.7173539059280472,
+        "Bias": 0.0005678332375666492
+      },
+      "Seasonal naive (lag 52)": {
+        "MAE": 11.070793074016365,
+        "RMSE": 26.478668082292305,
+        "WMAPE": 0.5872516165238579,
+        "MAPE": 1.0378459149135577,
+        "Bias": 0.0309915352108578
+      },
+      "Moving average (4 weeks)": {
+        "MAE": 8.542456316910355,
+        "RMSE": 20.726263801907436,
+        "WMAPE": 0.4531356739892609,
+        "MAPE": 0.7776501410195199,
+        "Bias": 0.005810513487943724
+      },
+      "XGBoost (no bias correction)": {
+        "MAE": 5.41448576636294,
+        "RMSE": 11.376517098027612,
+        "WMAPE": 0.2872120811656096,
+        "MAPE": 0.5203949339478132,
+        "Bias": -0.05450645890069544
+      },
+      "XGBoost": {
+        "MAE": 5.419749974414922,
+        "RMSE": 11.290553563082963,
+        "WMAPE": 0.28749132174644015,
+        "MAPE": 0.5454407647699969,
+        "Bias": -0.009780123749924739
+      },
+      "LightGBM (no bias correction)": {
+        "MAE": 5.402773880477396,
+        "RMSE": 11.38653611673976,
+        "WMAPE": 0.2865908226999472,
+        "MAPE": 0.5154444595591734,
+        "Bias": -0.05469119461971407
+      },
+      "LightGBM": {
+        "MAE": 5.410405971770152,
+        "RMSE": 11.296133421684416,
+        "WMAPE": 0.28699566794627807,
+        "MAPE": 0.5400613014180774,
+        "Bias": -0.010295633855141319
+      }
+    },
+    "cv_mean": {
+      "LightGBM": {
+        "MAE": 5.953347350950849,
+        "RMSE": 14.789113721293681,
+        "WMAPE": 0.29571742717749105
+      },
+      "Moving average (4 weeks)": {
+        "MAE": 9.427151710917105,
+        "RMSE": 23.084383215792702,
+        "WMAPE": 0.4681117234504262
+      },
+      "Naive (last week)": {
+        "MAE": 9.48622146760176,
+        "RMSE": 24.540666776529942,
+        "WMAPE": 0.47091952807791426
+      },
+      "Seasonal naive (lag 52)": {
+        "MAE": 11.773009166509551,
+        "RMSE": 30.20089005572457,
+        "WMAPE": 0.5845860504879362
+      },
+      "XGBoost": {
+        "MAE": 6.00909283160998,
+        "RMSE": 14.915082149837986,
+        "WMAPE": 0.2984475400663157
+      }
+    }
+  },
+  "production": {
+    "next_week": "2012-01-11",
+    "bias_correction": 1.0473047421080053
+  },
+  "optimization": {
+    "n_products": 47,
+    "n_product_segments": 141,
+    "n_not_recommended": 8,
+    "binding": {
+      "volume guardrail": 94,
+      "+price band": 47
+    },
+    "median_target_change": 0.1414559172972658,
+    "median_weeks_to_target": 3.0,
+    "all_sanity_checks_passed": true,
+    "total_weekly_revenue_current": 145616.23103768897,
+    "total_weekly_revenue_at_target": 150199.20286376125,
+    "total_weekly_profit_current_assumed": 43684.86931139104,
+    "total_weekly_profit_at_target_assumed": 57009.08703101336,
+    "xgb_price_response_monotone_share": 0.425531914893617,
+    "xgb_price_response_median_arc_elasticity": -0.8501669800725364
+  },
+  "price_response_validation": {
+    "No price effect (E = 0)": {
+      "MAE_within_week": 0.4832936092858416,
+      "MAE_skill_within_week": 0.0,
+      "calibration_slope": NaN,
+      "MAE_simple": 0.5060700075387867,
+      "MAE_skill_simple": 0.0,
+      "n_events": 17842
+    },
+    "M1 naive OLS": {
+      "MAE_within_week": 0.47500725938737254,
+      "MAE_skill_within_week": 0.01714558135935984,
+      "calibration_slope": 0.38780393262892937,
+      "MAE_simple": 0.4675418890389868,
+      "MAE_skill_simple": 0.07613199345121635,
+      "n_events": 17842
+    },
+    "M4 controlled OLS (store + week FE)": {
+      "MAE_within_week": 0.4457077360660794,
+      "MAE_skill_within_week": 0.07777026738529091,
+      "calibration_slope": 0.8492886754963095,
+      "MAE_simple": 0.45352864335286613,
+      "MAE_skill_simple": 0.10382232379557421,
+      "n_events": 17842
+    },
+    "M5 regular-price OLS": {
+      "MAE_within_week": 0.44742209992542364,
+      "MAE_skill_within_week": 0.0742230161359364,
+      "calibration_slope": 0.7544720969735913,
+      "MAE_simple": 0.4581823215470845,
+      "MAE_skill_simple": 0.09462660358909336,
+      "n_events": 17842
+    },
+    "M7 promotion-calendar IV": {
+      "MAE_within_week": 0.5885710828191013,
+      "MAE_skill_within_week": -0.21783336570253287,
+      "calibration_slope": 0.08468820962089744,
+      "MAE_simple": 0.5808293286513464,
+      "MAE_skill_simple": -0.14772525539725834,
+      "n_events": 17842
+    },
+    "M8 promotion-identified (raw)": {
+      "MAE_within_week": 0.4555223342609275,
+      "MAE_skill_within_week": 0.057462533108913805,
+      "calibration_slope": 0.6504403372721302,
+      "MAE_simple": 0.4618841640506413,
+      "MAE_skill_simple": 0.0873117213625012,
+      "n_events": 17842
+    },
+    "M8 + shrinkage (product level)": {
+      "MAE_within_week": 0.45454031887369,
+      "MAE_skill_within_week": 0.05949445608155268,
+      "calibration_slope": 1.0213823532723794,
+      "MAE_simple": 0.4620579825462604,
+      "MAE_skill_simple": 0.08696825406938014,
+      "n_events": 17842
+    },
+    "M8 + shrinkage + store segment (ENGINE)": {
+      "MAE_within_week": 0.4542665819863604,
+      "MAE_skill_within_week": 0.060060854813234865,
+      "calibration_slope": 1.0332001480405621,
+      "MAE_simple": 0.46184941335151247,
+      "MAE_skill_simple": 0.08738038913298973,
+      "n_events": 17842
+    }
+  },
+  "dynamic": {
+    "n_refits": 5,
+    "median_target_by_refit": {
+      "2011-01-05": 1.132935845504399,
+      "2011-04-06": 1.1268524615307314,
+      "2011-07-06": 1.1308452623520653,
+      "2011-10-05": 1.12422971845259,
+      "2012-01-04": 1.1337415906363661
+    },
+    "binding": {
+      "volume guardrail": 547,
+      "+price band": 233,
+      "no usable elasticity": 36
+    },
+    "n_events_validation": 17842
+  }
+}

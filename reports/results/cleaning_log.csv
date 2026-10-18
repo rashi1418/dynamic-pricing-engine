@@ -1,0 +1,12 @@
+step,rows_affected,action,reason
+raw rows,524950,none,starting point
+"duplicate (week, store, upc)",0,drop,the panel key must be unique; none were found
+"missing/zero price, units>0",0,impute price = spend/units,accounting identity SPEND = PRICE*UNITS holds exactly in the data
+units == 0 (with visits > 0),5,drop,"no price recorded and no units; likely voided transactions, not 'zero demand'"
+price still missing,19,drop,price not recoverable
+missing base_price,185,ffill/bfill within store-product,regular price changes rarely; neighbouring weeks are the best estimate
+price > base_price,4937,set base_price = price (flagged),"base price is the regular (non-discounted) price, so it cannot be below the shelf price; most likely a lag in the base-price field"
+extreme units (> median + 10*IQR within store-product),1734,flag only (kept),"may be genuine events (promotions, holidays) or data errors; removal would bias the promo effect. Elasticity has a robustness check excluding them."
+store lookup: same store_id listed twice with different segment,13693,keep first listing (MAINSTREAM); rows kept,"stores [4503, 17627] appear twice; a naive join would duplicate their transactions"
+rows without store attributes,0,keep,store lookup joined; missing values would be left as NaN
+final clean rows,524926,-,24 rows removed in total

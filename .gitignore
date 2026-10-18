@@ -1,0 +1,12 @@
+# data is downloaded, never committed (dunnhumby terms)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.DS_Store
